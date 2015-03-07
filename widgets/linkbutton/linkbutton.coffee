@@ -1,0 +1,1 @@
+class Dashing.Linkbutton extends Dashing.Widget

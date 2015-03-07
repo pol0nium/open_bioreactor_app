@@ -1,0 +1,1 @@
+class Dashing.Temperaturealertbutton extends Dashing.Widget

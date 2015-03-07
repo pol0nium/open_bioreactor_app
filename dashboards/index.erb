@@ -1,0 +1,52 @@
+<script type='text/javascript'>
+$(function() {
+Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":2,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":2,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":1},{"col":1,"row":4,"size_x":1,"size_y":1},{"col":2,"row":4,"size_x":2,"size_y":1},{"col":4,"row":4,"size_x":1,"size_y":1}]')
+});
+</script>
+<% content_for :title do %>BioReactor<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-view="Timer" style="background-color:#292929"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-view="Linkbutton" style="background-color:#292929"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="logo" data-view="Image "data-image="/logo.png" style="background-color:#292929"></div>
+    </li>
+
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="temperature" data-view="Meter" data-title="Temperature" style="background-color:#D3613B" data-min=<%= ENV["min_temp"].nil? ? "0" : ENV["min_temp"].to_s %> data-max=<%= ENV["max_temp"].nil? ? "100" : ENV["max_temp"].to_s %>></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="temperature-highchart" data-view="Highchart" style="background-color:#D3613B" data-title="Temperature" data-color="red"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="temp-alert" data-view="Temperaturealertbutton" style="background-color:#CF4F2E" data-title="Temperature Alert" data-text="Enter the min and max temperature alert:"></div>
+    </li>
+
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="ph" data-view="Meter" data-title="Current PH" style="background-color:#9DE168" data-min=<%= ENV["min_ph"].nil? ? "0" : ENV["min_ph"].to_s %> data-max=<%= ENV["max_ph"].nil? ? "14" : ENV["max_ph"].to_s %>></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="ph-highchart" data-view="Highchart" style="background-color:#9DE168" data-title="PH"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="ph-alert" data-view="Phalertbutton" style="background-color:#8FDB2E" data-title="PH Alert" data-text="Enter the min and max PH alert:"></div>
+    </li>
+
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="oh" data-view="Meter" data-title="Current OH" style="background-color:#49ABEA" data-min=<%= ENV["min_oh"].nil? ? "0" : ENV["min_oh"].to_s %> data-max=<%= ENV["max_oh"].nil? ? "100" : ENV["max_oh"].to_s %>></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="oh-highchart" data-view="Highchart" style="background-color:#49ABEA" data-title="OH"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="oh-alert" data-view="Ohalertbutton" style="background-color:#3E9CE4" data-title="OH Alert" data-text="Enter the min and max OH alert:"></div>
+    </li>
+  </ul>
+</div>
